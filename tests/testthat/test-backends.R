@@ -32,6 +32,11 @@ describe("activesession_backend", {
       session$write(list(a = 1, b = 2), "foo")
       expect_equal(env$foo, list(a = 1, b = 2))
     })
+
+    test_that("it can print the backend", {
+      dir <- tempdir()
+      expect_output(print(activesession_backend("r")), "In-memory activesession backend")
+    })
   })
 
   describe("file backend", {
@@ -62,6 +67,12 @@ describe("activesession_backend", {
       backend <- activesession_backend("file", dir) 
       backend$write(list(a = 1, b = 2), "test")
       expect_equal(list(a = 1, b = 2), backend$read("test"))
+    })
+
+    test_that("it can print the backend", {
+      dir <- tempdir()
+      expect_output(print(activesession_backend("file", dir)), dir)
+      expect_output(print(activesession_backend("file", dir)), "File activesession backend")
     })
   })
 })
