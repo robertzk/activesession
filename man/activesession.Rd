@@ -14,3 +14,6 @@ the local pieces that do not fit into memory can be purged on a least-recently-u
 basis. This is similar to the concept of views used by distributed version control
 systems.
 }
+\author{
+Robert Krzyzanowski <\url{http://syberia.io}>
+}

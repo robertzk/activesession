@@ -11,4 +11,6 @@
 #'
 #' @name activesession
 #' @docType package
+#' @author Robert Krzyzanowski <\url{http://syberia.io}>
+#' @import R6
 NULL

@@ -17,6 +17,8 @@ Depends:
     R (>= 3.0.1)
 License: MIT
 LazyData: true
+Imports:
+    R6
 Suggests:
     cacher (>= 0.0.8),
     knitr,
