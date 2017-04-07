@@ -56,6 +56,13 @@ describe("activesession_backend", {
       backend$write(list(a = 1, b = 2), "test")
       expect_true(file.exists(file.path(dir, "test")))
     })
+
+    test_that("it can read from a file", {
+      dir <- tempdir()
+      backend <- activesession_backend("file", dir) 
+      backend$write(list(a = 1, b = 2), "test")
+      expect_equal(list(a = 1, b = 2), backend$read("test"))
+    })
   })
 })
 
