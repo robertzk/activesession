@@ -31,12 +31,20 @@
 #' @format NULL
 #' @docType class
 activesession <- R6::R6Class("activesession", 
+  private = list(
+    paths = list()
+  ),
   public = list(
-    initialize = function(paths) {
-      if (missing(paths)) {
-        stop("Must provide a ", sQuote("paths"), " argument.")
-      }
+    initialize = function(paths = list()) {
+      validate_paths(paths)
+      private$paths <- paths
     }
   )
 )
+
+validate_paths <- function(paths) {
+  if (!is.list(paths)) {
+    stop(sQuote("paths"), " argument must be a list.")
+  }
+}
 
