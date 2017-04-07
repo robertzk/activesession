@@ -1,3 +1,4 @@
 library("testthat")
-library("package.name")
-test_check("package.name")
+library("testthatsomemore")
+library("activesession")
+test_check("activesession")
