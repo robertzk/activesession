@@ -4,7 +4,7 @@
 #' may potentially be distributed amongst several backends such as
 #' disk, a database, cloud storage like S3, etc.
 #'
-#' The activesession abstracts turns syntax like \code{session$foo$bar}
+#' The activesession abstraction turns syntax like \code{session$foo$bar}
 #' into statements like \code{s3mpi::s3read("foo/bar")} and 
 #' assignments like \code{session$foo$bar <- iris} into the equivalent
 #' \code{s3mpi::s3store(iris, "foo/bar")}.
@@ -49,6 +49,8 @@ activesession <- R6::R6Class("activesession",
 
 #' Read from an activesession.
 #' 
+#' @param object activesession. The activesession object.
+#' @param el character. The accessed key.
 #' @export
 `$.activesession` <- function(object, el)  {
   get(el, envir = get("baseenv_", envir = object)) 
@@ -56,6 +58,9 @@ activesession <- R6::R6Class("activesession",
 
 #' Write to an activesession.
 #' 
+#' @param object activesession. The activesession object.
+#' @param el character. The written key.
+#' @param value ANY. The value to assign.
 #' @export
 `$<-.activesession` <- function(object, el, value)  {
   assign(el, value, envir = get("baseenv_", envir = object)) 

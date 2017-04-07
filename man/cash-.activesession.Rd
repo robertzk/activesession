@@ -6,6 +6,11 @@
 \usage{
 \method{$}{activesession}(object, el)
 }
+\arguments{
+\item{object}{activesession. The activesession object.}
+
+\item{el}{character. The accessed key.}
+}
 \description{
 Read from an activesession.
 }

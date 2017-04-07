@@ -6,6 +6,13 @@
 \usage{
 \method{$}{activesession}(object, el) <- value
 }
+\arguments{
+\item{object}{activesession. The activesession object.}
+
+\item{el}{character. The written key.}
+
+\item{value}{ANY. The value to assign.}
+}
 \description{
 Write to an activesession.
 }
