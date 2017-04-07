@@ -10,6 +10,8 @@ activesession_backend(name = c("r", "file", "s3mpi", "cacher"), ...)
 \item{name}{character. Name of the activesession backend. Currently,
 supported values are \code{c("r", "file", "s3mpi", "cacher")}, but the
 latter two require additional packages.}
+
+\item{...}{additional options to pass to the specific backend.}
 }
 \value{
 An \code{activesession_backend} R6 object.

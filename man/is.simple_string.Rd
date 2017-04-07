@@ -6,6 +6,13 @@
 \usage{
 is.simple_string(string)
 }
+\arguments{
+\item{string}{character. The object to test.}
+}
+\value{
+\code{TRUE} or \code{FALSE} according as the object is a
+  non-NA non-blank string of length 1.
+}
 \description{
 A simple string is (a) character, (b) length 1, and (c) not blank.
 }
