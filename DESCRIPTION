@@ -18,8 +18,13 @@ Depends:
 License: MIT
 LazyData: true
 Suggests:
+    cacher (>= 0.0.8),
     knitr,
     microbenchmark,
+    s3mpi,
     testthat
+Remotes:
+    kirillseva/cacher@0.0.8,
+    robertzk/s3mpi@0.2.20
 Roxygen: list(wrap = FALSE)
 RoxygenNote: 6.0.1
