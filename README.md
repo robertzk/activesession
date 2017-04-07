@@ -1,4 +1,4 @@
-R Package Template [![Build Status](https://travis-ci.org/robertzk/activesession.svg?branch=master)](https://travis-ci.org/robertzk/activesession) [![Coverage Status](https://coveralls.io/repos/robertzk/activesession/badge.svg?branch=master)](https://coveralls.io/r/robertzk/activesession)
+Activesession [![Build Status](https://travis-ci.org/robertzk/activesession.svg?branch=master)](https://travis-ci.org/robertzk/activesession) [![Coverage Status](https://coveralls.io/repos/robertzk/activesession/badge.svg?branch=master)](https://coveralls.io/r/robertzk/activesession)
 ===========
 
 Activesession provides a heterogeneous-backend key-value store syntax for R.

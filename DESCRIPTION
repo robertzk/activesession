@@ -17,9 +17,27 @@ Depends:
     R (>= 3.0.1)
 License: MIT
 LazyData: true
+Imports:
+    crayon,
+    R6
 Suggests:
+    cacher (>= 0.0.8),
     knitr,
     microbenchmark,
-    testthat
+    s3mpi,
+    testthat,
+    testthatsomemore (>= 0.2.5)
+Remotes:
+    kirillseva/cacher,
+    robertzk/s3mpi,
+    robertzk/testthatsomemore
 Roxygen: list(wrap = FALSE)
 RoxygenNote: 6.0.1
+Collate: 
+    'activesession.R'
+    'backend-R6.R'
+    'backend-file.R'
+    'backend-r.R'
+    'backend.R'
+    'package.activesession.R'
+    'utils.R'

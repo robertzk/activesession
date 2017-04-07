@@ -9,6 +9,8 @@
 #' systems.
 #'
 #'
-#' @name activesession
+#' @name activesession-package
 #' @docType package
+#' @author Robert Krzyzanowski <\url{http://syberia.io}>
+#' @import R6 crayon
 NULL
