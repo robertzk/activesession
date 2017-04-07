@@ -35,13 +35,26 @@ describe("activesession_backend", {
   })
 
   describe("file backend", {
-    test_that("it cannot create a backend without a valid directory", {
-      expect_error(activesession_backend("file"), "A file path is necessary")
-      expect_error(activesession_backend("file", NULL), "character file path is necessary")
-      expect_error(activesession_backend("file", 1), "character file path is necessary")
-      expect_error(activesession_backend("file", list(a = 1)), "character file path is necessary")
-      expect_error(activesession_backend("file", identity), "character file path is necessary")
-      expect_error(activesession_backend("file", "/foo/bar/baz"), "not an existent directory")
+    describe("failure conditions", {         
+      test_that("it cannot create a backend without a valid directory", {
+        expect_error(activesession_backend("file"), "A file path is necessary")
+        expect_error(activesession_backend("file", NULL), "character file path is necessary")
+        expect_error(activesession_backend("file", 1), "character file path is necessary")
+        expect_error(activesession_backend("file", list(a = 1)), "character file path is necessary")
+        expect_error(activesession_backend("file", identity), "character file path is necessary")
+        expect_error(activesession_backend("file", "/foo/bar/baz"), "not an existent directory")
+      })
+    })
+
+    test_that("it can create a file activesession backend", {
+      assert(activesession_backend("file", tempdir()))
+    })
+
+    test_that("it can write to a file", {
+      dir <- tempdir()
+      backend <- activesession_backend("file", dir) 
+      backend$write(list(a = 1, b = 2), "test")
+      expect_true(file.exists(file.path(dir, "test")))
     })
   })
 })
