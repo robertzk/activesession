@@ -33,3 +33,10 @@ Remotes:
     robertzk/testthatsomemore@0.2.5
 Roxygen: list(wrap = FALSE)
 RoxygenNote: 6.0.1
+Collate: 
+    'backend-R6.R'
+    'backend-file.R'
+    'backend-r.R'
+    'backend.R'
+    'package.activesession.R'
+    'utils.R'
