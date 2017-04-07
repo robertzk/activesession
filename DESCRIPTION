@@ -18,6 +18,7 @@ Depends:
 License: MIT
 LazyData: true
 Imports:
+    crayon,
     R6
 Suggests:
     cacher (>= 0.0.8),
