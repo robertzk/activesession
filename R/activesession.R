@@ -33,6 +33,9 @@
 activesession <- R6::R6Class("activesession", 
   public = list(
     initialize = function(paths) {
+      if (missing(paths)) {
+        stop("Must provide a ", sQuote("paths"), " argument.")
+      }
     }
   )
 )
