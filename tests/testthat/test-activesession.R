@@ -9,5 +9,11 @@ describe("activesession object", {
       expect_error(activesession$new(identity), "must be a list")              
     })
   })
+
+  test_that("it works with a trivial session", {
+    session <- activesession$new()
+    session$foo <- 1
+    expect_equal(session$foo, 1)
+  })
 })
 

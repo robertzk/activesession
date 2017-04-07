@@ -32,15 +32,35 @@
 #' @docType class
 activesession <- R6::R6Class("activesession", 
   private = list(
-    paths = list()
+    paths   = list(),
+    baseenv = NULL
+  ),
+  active = list(
+    baseenv_ = function(value) { private$baseenv }
   ),
   public = list(
     initialize = function(paths = list()) {
       validate_paths(paths)
-      private$paths <- paths
+      private$paths   <- paths
+      private$baseenv <- new.env(parent = emptyenv())
     }
   )
 )
+
+#' Read from an activesession.
+#' 
+#' @export
+`$.activesession` <- function(object, el)  {
+  get(el, envir = get("baseenv_", envir = object)) 
+}
+
+#' Write to an activesession.
+#' 
+#' @export
+`$<-.activesession` <- function(object, el, value)  {
+  assign(el, value, envir = get("baseenv_", envir = object)) 
+  object
+}
 
 validate_paths <- function(paths) {
   if (!is.list(paths)) {
