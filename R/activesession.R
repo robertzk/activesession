@@ -29,6 +29,7 @@
 #'
 #' @name activesession_R6
 #' @format NULL
+#' @export
 #' @docType class
 activesession <- R6::R6Class("activesession", 
   private = list(
