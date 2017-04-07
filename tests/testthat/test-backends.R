@@ -9,7 +9,6 @@ describe("activesession_backend", {
       expect_error(activesession_backend(new.env()))
     })
   })
-
 })
 
 
