@@ -21,9 +21,16 @@ describe("activesession_backend", {
     })
 
     test_that("it can read an object", {
-      session <- activesession_backend("r")       
+      session <- activesession_backend("r")
       session$write(list(a = 1, b = 2), "foo")
       expect_equal(session$read("foo"), list(a = 1, b = 2))
+    })
+
+    test_that("it can store an object in a non-default environment", {
+      env <- new.env()
+      session <- activesession_backend("r", env = env)
+      session$write(list(a = 1, b = 2), "foo")
+      expect_equal(env$foo, list(a = 1, b = 2))
     })
   })
 })
