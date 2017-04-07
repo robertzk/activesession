@@ -5,6 +5,6 @@
 #'   latter two require additional packages.
 #' @return An \code{activesession_backend} R6 object.
 activesession_backend <- function(name = c("r", "file", "s3mpi", "cacher"), ...) {
-  
+  name <- match.arg(name) 
 }
 

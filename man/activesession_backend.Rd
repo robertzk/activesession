@@ -4,7 +4,7 @@
 \alias{activesession_backend}
 \title{Retrieve an activesession backend.}
 \usage{
-activesession_backend(name, ...)
+activesession_backend(name = c("r", "file", "s3mpi", "cacher"), ...)
 }
 \arguments{
 \item{name}{character. Name of the activesession backend. Currently,
