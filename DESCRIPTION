@@ -25,9 +25,11 @@ Suggests:
     knitr,
     microbenchmark,
     s3mpi,
-    testthat
+    testthat,
+    testthatsomemore (>= 0.2.5)
 Remotes:
     kirillseva/cacher@0.0.8,
-    robertzk/s3mpi@0.2.20
+    robertzk/s3mpi@0.2.20,
+    robertzk/testthatsomemore@0.2.5
 Roxygen: list(wrap = FALSE)
 RoxygenNote: 6.0.1
