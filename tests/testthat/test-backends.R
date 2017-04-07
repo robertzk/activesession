@@ -33,6 +33,17 @@ describe("activesession_backend", {
       expect_equal(env$foo, list(a = 1, b = 2))
     })
   })
+
+  describe("file backend", {
+    test_that("it cannot create a backend without a valid directory", {
+      expect_error(activesession_backend("file"), "A file path is necessary")
+      expect_error(activesession_backend("file", NULL), "character file path is necessary")
+      expect_error(activesession_backend("file", 1), "character file path is necessary")
+      expect_error(activesession_backend("file", list(a = 1)), "character file path is necessary")
+      expect_error(activesession_backend("file", identity), "character file path is necessary")
+      expect_error(activesession_backend("file", "/foo/bar/baz"), "not an existent directory")
+    })
+  })
 })
 
 

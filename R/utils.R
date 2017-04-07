@@ -10,3 +10,11 @@ is.directory <- function(path) {
     file.exists(path) && file.info(path)$isdir
 }
 
+#' Checks if a string is a simple string.
+#'
+#' A simple string is (a) character, (b) length 1, and (c) not blank.
+#' @export
+is.simple_string <- function(string) {
+  is.character(string) && length(string) == 1 && nzchar(string) && !is.na(string)
+}
+

@@ -10,6 +10,12 @@ backend_file <- R6::R6Class("activesession_backend_file",
   ),
   public = list(
     initialize = function(path) {
+      if (missing(path)) {
+        stop("A file path is necessary to initialize an activesession file backend.")
+      }
+      if (!is.simple_string(path)) {
+        stop("A character file path is necessary to initialize an activesession file backend.")
+      }
       if (!is.directory(path)) {
         stop("Cannot initialize an activesession file backend with path ",
              sQuote(path), " because that path is not an existent directory.")
